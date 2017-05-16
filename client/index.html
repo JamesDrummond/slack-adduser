@@ -1,0 +1,18 @@
+<html>
+    <script>
+        function hack() {
+            var form = document.createElement("form");
+            var myForm = document.example;
+            form.submit.apply(myForm);
+        }
+    </script>
+
+    <form name="example" id="example" method="get" action="">
+        <input  name="emailaddress">
+        <button 
+          type="button" 
+          name="submit" 
+          onclick="hack();return false;"
+        >Submit</button>
+    </form>
+</html>
