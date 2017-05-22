@@ -1,11 +1,16 @@
 var http = require('https');
 var express = require('express');
+var cors = require('cors');
 var app = express();
 var options;
 var jsonObj;
 var resMain;
 var hourReset;
 var userInvites=0;
+
+
+// use it before all route definitions
+app.use(cors({origin: 'http://163.172.166.116'}));
 
 callback = function(response) {
   var str = '';

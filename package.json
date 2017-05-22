@@ -1,14 +1,24 @@
 {
   "name": "nodejs-sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "| #       | Description           | Command  | | :------------- |:-------------| :-----| | 1      | Run | `cd ${current.project.path}/app && API_KEY='testapikeyvalue43121' node app.js` |",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "EPL-1.0",
   "dependencies": {
-    "express": "^4.13.4"
-  }
+    "express": "^4.13.4",
+    "cors": "^2.8.3 "
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesDrummond/slack-adduser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JamesDrummond/slack-adduser/issues"
+  },
+  "homepage": "https://github.com/JamesDrummond/slack-adduser#readme"
 }
