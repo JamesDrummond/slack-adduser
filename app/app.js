@@ -19,7 +19,7 @@ callback = function(response) {
     }
     else{
         console.log("HTTPS callback error from server: "+jsonObj.error);
-        resMain.send("Error: "+jsonObj.error)
+        resMain.send("Error: "+jsonObj.error);
     }
   });
 }
@@ -56,7 +56,7 @@ app.get('/', function (req, res) {
         else{
             options = {
               host: 'slack.com',
-              path: '/api/users.admin.invite?token='+apiKey+'&email='+email+'&channels=che-general'
+              path: '/api/users.admin.invite?token='+apiKey+'&email='+email
             };
             http.request(options, callback).end();
             validEmail = true

@@ -1,18 +1,46 @@
 <html>
-    <script>
-        function hack() {
-            var form = document.createElement("form");
-            var myForm = document.example;
-            form.submit.apply(myForm);
-        }
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     
+    <script >
+        $(function(){
+            $('#submitButton').click(function() {
+  var url = $('form').attr('action')
+  var params = $('form').serialize()
+  $.ajax({
+                data: $('form').serialize(),
+                type: $('form').attr('method'),
+                url: $('form').attr('action'), 
+                success: function(data) {
+                    if( data['error'] == false) {
+                        var msg = 'We got your flag. Our moderators will now look into it. You may close the window now!';
+                        $('#output1').html(msg);
+                    }
+                    else {
+                        $('#output1').html(data);
+                    }   
+                },
+                error: function (data) {
+                       var r = jQuery.parseJSON(data.responseText);
+                       alert("Message: " + r.Message);
+                       alert("StackTrace: " + r.StackTrace);
+                       alert("ExceptionType: " + r.ExceptionType);
+                }
+            });
+            
+            return false;
+    });
+});
+        
     </script>
-
-    <form name="example" id="example" method="get" action="">
-        <input  name="emailaddress">
-        <button 
-          type="button" 
-          name="submit" 
-          onclick="hack();return false;"
-        >Submit</button>
-    </form>
+    </head>
+    
+    Enter your email address for us to send invite too.
+    <form name="stackadduser" id="stackadduser" method="get" action="http://163.172.166.116:38211/">
+        
+        <input  name="email">
+<button type="button" id="submitButton"><span>submit</span></button>
+        </form>
+        <div id="output1">output will go here
+</div>
 </html>
